@@ -6,7 +6,6 @@ import { toUpperCase } from "fp-ts/lib/string";
 
 const sum = (a: number) => (b: number) => a + b;
 const increment = sum(1);
-const toUpper = (s: string) => s.toUpperCase();
 const log = (x: unknown) => {
   console.log(x);
   return x;

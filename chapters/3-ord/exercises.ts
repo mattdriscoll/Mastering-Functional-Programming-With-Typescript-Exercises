@@ -2,7 +2,7 @@ import { fromCompare, type Ord } from "fp-ts/lib/Ord";
 import { map, sort } from "fp-ts/lib/ReadonlyArray";
 import { flow } from "fp-ts/lib/function";
 import { Ord as OrdNumber } from "fp-ts/lib/number";
-import type { Person } from "../2/exercises";
+import type { Person } from "../2-eq/exercises";
 
 /**
  * 1.
