@@ -1,0 +1,24 @@
+{
+  "name": "mastering-functional-programming-with-typescript",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test_ch1": "vitest watch chapters/1/exercises.test.ts",
+    "test_ch2": "vitest watch chapters/2/exercises.test.ts",
+    "test_ch3": "vitest watch chapters/3/exercises.test.ts",
+    "test_ch4": "vitest watch chapters/4/exercises.test.ts",
+    "test_ch5": "vitest watch chapters/5/exercises.test.ts",
+    "test_ch6": "vitest watch chapters/6/exercises.test.ts",
+    "test_ch7": "vitest watch chapters/7/exercises.test.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fp-ts": "^2.16.2"
+  }
+}
