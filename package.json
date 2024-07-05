@@ -9,7 +9,8 @@
     "test_ch4": "vitest watch chapters/4-semigroup-and-monoid/exercises.test.ts",
     "test_ch5": "vitest watch chapters/5-functor/exercises.test.ts",
     "test_ch7": "vitest watch chapters/7-monad/exercises.test.ts",
-    "test_ch8": "vitest watch chapters/8-option/exercises.test.ts"
+    "test_ch8": "vitest watch chapters/8-option/exercises.test.ts",
+    "test_ch9": "vitest watch chapters/9-either/exercises.test.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
