@@ -3,6 +3,10 @@ import { pipe } from "fp-ts/lib/function";
 import fs from "fs";
 import path from "path";
 
+export const errorMessages = {
+  fileNotReadable: "file not readable",
+};
+
 /**
  * Write a function that takes a filename as a string and returns
  * Either<Error, Buffer> with either an error or file contents.
@@ -13,7 +17,7 @@ const getFileContents = (
   pipe(
     E.tryCatch(
       () => fs.readFileSync(path.resolve(__dirname, filename) /* , "utf8" */),
-      (e) => new Error("file not readable")
+      (e) => new Error(errorMessages.fileNotReadable)
     )
   );
 export const ch9_q1 = getFileContents;
