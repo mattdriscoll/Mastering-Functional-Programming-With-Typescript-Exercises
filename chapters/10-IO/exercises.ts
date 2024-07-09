@@ -150,7 +150,7 @@ export const ch10_q2_do = getWeekdayNthOccuranceDo;
  * traverseArray: <A, B>(f: (a: A) => IO<B>) => (as: readonly A[]) => IO<readonly B[]>
  */
 
-export const ch10_q3 = (count: number) =>
+export const ch10_q3 = (length: number) =>
   IO.traverseArray((num: number) => () => num)(
-    new Array(count).fill(Math.random())
+    Array.from({ length }, () => Math.random())
   );
