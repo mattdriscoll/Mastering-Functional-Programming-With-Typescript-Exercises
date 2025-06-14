@@ -4,32 +4,26 @@
  * (A) => B and (B) => C, returning a new function with type of
  * (A) => C. You should not use `fp-ts`'s `flow` function
  */
-const compose = (A) => (B) => (C) => B(A(C));
+export const compose =
+  <A, B, C>(fn2: (b: B) => C, fn1: (a: A) => B) =>
+  (a: A): C =>
+    fn2(fn1(a));
 
 /**
  * Implement your own `flow` function, which will utilize the
  * `compose` function. This `flow` function should be capable of
  * composing an arbitrary number of functions.
  */
-export const flow = (...funcs) => {
-  const [first, ...rest] = funcs;
-  return rest[0] ? compose(first)(flow(...rest)) : first;
-};
+export const flow = <A, B>(...fns: Array<(a: any) => any>): ((a: A) => B) =>
+  fns.reduce(
+    (comp, f) => compose(f, comp),
+    x => x,
+  );
 
 /**
  * Implement your own `pipe` function, which should use the `flow`
  * function from the previous question and have semantics similar
  * to `fp-ts`'s `pipe` function
  */
-export const pipe = (...args) => {
-  const [val, ...funcs] = args;
-  return flow(...funcs)(val);
-};
-
-export function add(a) {
-  return (b) => a + b;
-}
-
-export function multiplyBy(a) {
-  return (b) => a * b;
-}
+export const pipe = <A, B>(val: A, ...funcs: Array<(x: any) => any>): B =>
+  flow<A, B>(...funcs)(val);
