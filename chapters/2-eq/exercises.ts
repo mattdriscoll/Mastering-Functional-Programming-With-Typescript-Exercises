@@ -2,6 +2,7 @@ import { type Eq, fromEquals, struct } from "fp-ts/lib/Eq";
 import { flow } from "fp-ts/lib/function";
 import { Eq as EqNumber } from "fp-ts/lib/number";
 import { Eq as EqString } from "fp-ts/lib/string";
+import type { Person, PersonGraph } from "../../types";
 
 /**
  * 1.
@@ -67,12 +68,6 @@ export const ch2_q3 = eqStrSpaceInsensitiveFromEquals;
  * Eq<PersonGraph> instance would perform full equality by recursively
  * descending into each person’s contacts, their contacts, and so on…
  */
-type Person = {
-  name: string;
-  age: number;
-};
-
-export type PersonGraph = [Person, PersonGraph[]];
 
 const EqPerson = struct<Person>({
   name: EqString,
