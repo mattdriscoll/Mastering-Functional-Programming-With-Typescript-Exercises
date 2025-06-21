@@ -1,5 +1,6 @@
 import { expect, test } from "vitest";
-import { ch2_q1, ch2_q2, ch2_q3, ch2_q4, type PersonGraph } from "./exercises";
+import { ch2_q1, ch2_q2, ch2_q3, ch2_q4 } from "./exercises";
+import type { PersonGraph } from "../../types";
 
 test("Ch2 Q1", () => {
   expect(ch2_q1.equals(-2, 2)).toBeTruthy();
