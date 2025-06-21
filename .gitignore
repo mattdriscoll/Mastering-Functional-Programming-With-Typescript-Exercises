@@ -1,4 +1,4 @@
-# Ignore chapter content, only keep exercises & tests
+# Ignore chapter notes & content, only keep exercises & tests
 chapters/**/*-*.ts
 
 # Logs
