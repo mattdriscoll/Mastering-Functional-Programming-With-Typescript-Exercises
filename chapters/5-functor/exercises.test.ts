@@ -1,10 +1,9 @@
 import { expect, test } from "vitest";
-import { append, toString, prepend, toArray, strToUpper } from "../../utils";
+import { append, toString, prepend, toArray, strToUpper, surround } from "../../utils";
 import { ch5_q1 as mapFunc } from "./exercises";
-import { flow, identity, pipe } from "fp-ts/lib/function";
+import { identity, pipe } from "fp-ts/lib/function";
 
 const exclaim = append("!");
-const surround = (a: string) => flow(append(a), prepend(a));
 
 test("Ch5 Q2 - Identity", () => {
   const mappedToString = pipe(toString, mapFunc(identity));
