@@ -10,5 +10,7 @@ export const surround = (a: string) => flow(append(a), prepend(a));
 export const beginsWith: (pattern: string) => (a: string) => boolean = pattern => a =>
   !!a.match(RegExp(pipe(pattern, prepend("^"))));
 
+export const isNumber = (a: unknown): a is number => typeof a === "number";
+export const isGreaterThan = (a: number) => (b: number) => b > a;
 export const sum = (a: number) => (b: number) => a + b;
 export const multiplyBy = (a: number) => (b: number) => a * b;
